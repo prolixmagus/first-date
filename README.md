@@ -1,10 +1,15 @@
-# first-date
+# Will you find love ... at the grocery store?
 
-This template should help get you started developing with Vue 3 in Vite.
+After many failed first dates, you decided to try something different - craft the perfect romantic dinner from scratch. Your date is in a few hours - good luck!
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Tools
+
+- Vite (configuration, hot reload server for easy development)
+- Vue (Javascript framework for building UI)
+- EJS (templating)
+- ESLint and Prettier for formatting and cleaning up
 
 ## Customize configuration
 
@@ -26,6 +31,18 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### Compile and Minify for Development
+
+```sh
+npm run build:dev
+```
+
+### Deploy with Surge
+
+```sh
+npm run deploy
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
