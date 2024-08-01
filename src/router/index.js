@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import StartView from '../views/StartView.vue';
 import AdventureView from '../views/AdventureView.vue';
 
 const router = createRouter({
@@ -7,11 +6,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'start',
-      component: StartView
+      name: 'adventure-start',
+      component: AdventureView
     },
     {
-      path: '/:slug',
+      path: '/adventure/:slug',
       name: 'adventure',
       component: AdventureView
     }

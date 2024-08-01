@@ -10,7 +10,7 @@ export const useOptionsStore = defineStore('options', () => {
       id: 1,
       slug: 'start',
       heading: 'Dating is Awful',
-      text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetary. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you. “I’m sick of going out all the time,” they say. “What if I cooked for you?” you reply. “That sounds amazing!” they say, “Just don’t murder me, okay?”',
+      text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetary. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you. “I’m sick of going out all the time,” they say. “What if I cooked for you?” you reply. “That sounds amazing! Just don’t murder me, okay?”',
       decision: 'You stand before the sliding doors of your local grocery store...',
       choices: [
         { text: 'Go left', slug: 'left' },

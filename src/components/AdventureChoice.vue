@@ -9,9 +9,9 @@
 <template>
 	<div>
 		<p class="direction">
-			{{ options.current.direction }}
+			{{ options.current.decision }}
 		</p>
-		<RouterLink v-for="choice in options.current.choices" :key="choice.slug" :to="`/${choice.slug}`">
+		<RouterLink v-for="choice in options.current.choices" :key="choice.slug" :to="`/adventure/${choice.slug}`">
 			{{ choice.text }}
 		</RouterLink>
 	</div>
