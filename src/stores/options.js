@@ -1,13 +1,14 @@
 import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
 import { useRoute } from 'vue-router';
+import { v4 as uuidv4 } from 'uuid';
 
 export const useOptionsStore = defineStore('options', () => {
   const route = useRoute();
 
   const list = [
     {
-      id: 1,
+      id: uuidv4(),
       slug: 'start',
       heading: 'Dating is Awful',
       text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetary. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you. “I’m sick of going out all the time,” they say. “What if I cooked for you?” you reply. “That sounds amazing! Just don’t murder me, okay?”',
@@ -18,7 +19,7 @@ export const useOptionsStore = defineStore('options', () => {
       ]
     },
     {
-      id: 2,
+      id: uuidv4(),
       slug: 'left',
       heading: 'Left Path',
       text: 'You encounter a river.',
@@ -29,7 +30,7 @@ export const useOptionsStore = defineStore('options', () => {
       ]
     },
     {
-      id: 3,
+      id: uuidv4(),
       slug: 'right',
       heading: 'Right Path',
       text: 'You find a cave. Do you want to enter the cave or continue walking?',

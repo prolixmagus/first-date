@@ -7,10 +7,11 @@
 </script>
 
 <template>
-	<section>
-		<h1>{{ options.current.heading }}</h1>
-		<h2>{{ route.params.slug }}</h2>
-		<p>{{ options.current.text }}</p>
+	<section class="exposition">
+		<div class="inner-column">
+			<h1 class="attention-voice">{{ options.current.heading }}</h1>
+			<p>{{ options.current.text }}</p>
+		</div>
 	</section>
 </template>
 
