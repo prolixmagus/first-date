@@ -14,10 +14,9 @@ main.outlet {
 .inner-column {
 	display: block;
 	/*	width: 98%; maybe? */
-	max-width: 1100px; /* could be a variable in settings */
+	max-width: 1000px; /* could be a variable in settings */
 	margin-inline: auto; /* horizontally center this by default */
-	padding: 30px 16px; /* a loose default */
-
+	padding-inline: 10px;
 	container-type: inline-size;
 }
 
@@ -27,11 +26,13 @@ main.outlet {
 	z-index: 5;
 }
 
-footer {
-	top: 20px;
-}
-
 .app {
 	display: flex;
 	flex-direction: column;
+}
+
+@media (min-width: 490px) {
+	.inner-column {
+		padding-inline: 20px;
+	}
 }

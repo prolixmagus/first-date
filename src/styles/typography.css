@@ -6,26 +6,30 @@
 
 body {
 	-webkit-font-smoothing: antialiased;
-	/* because Brian said to -- $todo confirm */
 }
 
 .calm-voice,
 p,
 li {
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 1.125rem; /* 18px */
-	line-height: 1.45;
+	line-height: 1.44;
+}
+
+.decision-voice {
+	font-family: monospace;
+	font-size: 1.125rem;
 }
 
 .strong-voice {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 1.75px; /* 28px */
+	font-family: 'Inter', sans-serif;
+	font-size: 1.125rem;
 	font-weight: 600;
 }
 
 .attention-voice {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 30px;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.75rem;
 }
 
 .loud-voice {
@@ -44,18 +48,36 @@ li {
 }
 
 :is(.calm-voice, p) strong {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 /* these would be scoped to section or to an article element */
 /* this is just a loose setting for now */
 /* or smaller group of article-like styles such as a <text-content> custom element */
+
+p,
+li {
+	max-width: 70ch;
+}
+
 p + p {
 	margin-top: 1em;
 }
 
+h1 + p {
+	margin-top: 1em;
+}
+
 h2 + p {
-	margin-top: 20px;
+	margin-top: 2em;
+}
+
+h2 + ol {
+	margin-top: 1em;
+}
+
+section + section {
+	margin-top: 6em;
 }
 
 code {

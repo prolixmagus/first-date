@@ -20,22 +20,16 @@
 /*@import 'modules.css';*/
 
 /* S ections and more stuff */
-.section-name {
-}
-
-.page-name .section-name {
-}
-
-.theme {
-}
 
 /* then other contextual styles */
+
 body {
 	background-color: var(--paper);
 	color: var(--ink);
+	padding-block: 15vh;
 }
 
-.my-fantastic-image {
-	max-width: 300px;
-	border-bottom-right-radius: 30px;
+ol {
+	list-style: number;
+	padding-left: 30px;
 }

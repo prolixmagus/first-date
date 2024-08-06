@@ -1,37 +1,27 @@
 /*@import 'developer-styles.css';*/
 
 html {
-	--black: #111111;
+	--black: #333333;
 	--white: #efefef;
 
 	--neutral-stuffs: gray;
 
-	--color: hsla(206, 66%, 77%, 1);
-	--highlight: hsla(190, 90%, 60%, 1);
+	--corners: 10px;
 
-	--shadow: rgba(0, 0, 0, 0.8);
-
-	--corners: 10px; /* or whatevers */
-
-	--paper: white; /*shadier dodgerblue*/
+	--paper: hsl(43, 50%, 94%);
 	--ink: black;
-
-	--space: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
-		--black: #111111;
+		--black: #333333;
 		--white: #efefef;
 
 		--neutral-stuffs: gray;
 
 		--color: hsla(206, 66%, 47%, 1);
-		--highlight: hsla(190, 90%, 40%, 1);
 
-		--shadow: rgba(0, 0, 0, 0.8);
-
-		--corners: 10px; /* or whatevers */
+		--corners: 10px;
 
 		--paper: hsla(217, 8%, 13%, 1);
 		--paper2: hsla(217, 6%, 17%, 1); /*bunker*/
