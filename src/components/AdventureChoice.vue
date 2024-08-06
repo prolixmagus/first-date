@@ -1,48 +1,66 @@
 <script setup>
 	import { useOptionsStore } from '@/stores/options';
 	import { useRoute, useRouter } from 'vue-router';
-	import { onMounted, onBeforeUnmount } from 'vue';
+	import { useMagicKeys } from '@vueuse/core';
+	import { watch } from 'vue';
+
 	const route = useRoute();
 	const options = useOptionsStore();
 	const router = useRouter();
 
-	function assignKey(event) {
-		//find what key you want to press
-		// convert the result to a string
-		// subtract 1 from key to get correct index (from 0)
-		// convert key to int
-		// select the right option from the choices array
-		// redirect to the right page
+	const magicKeys = useMagicKeys();
+	const keyToIndexMap = {
+		Digit1: 0,
+		Digit2: 1,
+		Digit3: 2,
+		Digit4: 3
+	};
 
-		const key = event.key;
-		if (key >= '1' && key <= String(options.current.choices.length)) {
-			const index = parseInt(key) - 1;
+	const navigateOnKeyPress = (index) => {
+		if (index < options.current.choices.length) {
 			const choice = options.current.choices[index];
 			if (choice) {
 				router.push(`/adventure/${choice.slug}`);
 			}
 		}
-	}
+	};
 
-	onMounted(() => document.addEventListener('keydown', assignKey));
-	onBeforeUnmount(() => document.removeEventListener('keydown', assignKey));
+	Object.keys(keyToIndexMap).forEach((key) => {
+		watch(magicKeys[key], (v) => {
+			if (v) {
+				navigateOnKeyPress(keyToIndexMap[key]);
+			}
+		});
+	});
 </script>
 
 <template>
 	<section class="decisions">
-		<div class='inner-column'>
-			<h2 class="situation">
-				{{ options.current.decision }}
-			</h2>
-			<ol class="choices">
-				<li v-for="choice in options.current.choices" :key="choice.id">
-					<RouterLink :to="`/adventure/${choice.slug}`">
-						{{ choice.text }}
-					</RouterLink>
-				</li>
-			</ol>
-		</div class='inner-column'>
+		<div class="inner-column">
+			<div class="choices-wrapper">
+				<h2 class="situation calm-voice">
+					<strong>{{ options.current.decision }}</strong>
+				</h2>
+				<ol class="choices">
+					<li v-for="choice in options.current.choices" :key="choice.id">
+						<RouterLink :to="`/adventure/${choice.slug}`">
+							{{ choice.text }}
+						</RouterLink>
+					</li>
+				</ol>
+			</div>
+		</div>
 	</section>
 </template>
 
-<style></style>
+<style scoped>
+	.choices-wrapper {
+		max-width: 900px;
+	}
+	.choices {
+		border-top: 1px solid var(--black);
+		li {
+			margin-top: 10px;
+		}
+	}
+</style>

@@ -5,13 +5,25 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const useOptionsStore = defineStore('options', () => {
   const route = useRoute();
-
   const list = [
     {
       id: uuidv4(),
       slug: 'start',
       heading: 'Dating is Awful',
-      text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetary. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you. “I’m sick of going out all the time,” they say. “What if I cooked for you?” you reply. “That sounds amazing! Just don’t murder me, okay?”',
+      paragraphs: [
+        {
+          text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetery. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you.'
+        },
+        {
+          text: '“I’m sick of going out all the time,” they say.'
+        },
+        {
+          text: '“What if I cooked for you?” you reply.'
+        },
+        {
+          text: '“That sounds amazing! Just don’t murder me, okay?”'
+        }
+      ],
       decision: 'You stand before the sliding doors of your local grocery store...',
       choices: [
         { text: 'Go left', slug: 'left' },
