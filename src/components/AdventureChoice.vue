@@ -25,6 +25,8 @@
 		}
 	};
 
+	//creates an array of keys from keyToIndexMap object
+
 	Object.keys(keyToIndexMap).forEach((key) => {
 		watch(magicKeys[key], (v) => {
 			if (v) {
@@ -54,6 +56,10 @@
 </template>
 
 <style scoped>
+	.decisions {
+		margin-top: 6em;
+	}
+
 	.choices-wrapper {
 		max-width: 900px;
 	}
@@ -61,6 +67,12 @@
 		border-top: 1px solid var(--black);
 		li {
 			margin-top: 10px;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.choices {
+			border-top: 1px solid var(--white);
 		}
 	}
 </style>

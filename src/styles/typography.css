@@ -51,10 +51,6 @@ li {
 	font-weight: 600;
 }
 
-/* these would be scoped to section or to an article element */
-/* this is just a loose setting for now */
-/* or smaller group of article-like styles such as a <text-content> custom element */
-
 p,
 li {
 	max-width: 70ch;
@@ -74,10 +70,6 @@ h2 + p {
 
 h2 + ol {
 	margin-top: 1em;
-}
-
-section + section {
-	margin-top: 6em;
 }
 
 code {

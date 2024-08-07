@@ -1,10 +1,13 @@
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 import { useRoute } from 'vue-router';
 import { v4 as uuidv4 } from 'uuid';
 
 export const useOptionsStore = defineStore('options', () => {
   const route = useRoute();
+  const isHidden = ref(true);
+
+  const oldPaths = [`/adventure/left`];
   const list = [
     {
       id: uuidv4(),
@@ -34,24 +37,17 @@ export const useOptionsStore = defineStore('options', () => {
       id: uuidv4(),
       slug: 'left',
       heading: 'Left Path',
-      text: 'You encounter a river.',
-      direction: 'Do you want to swim across or walk along the river?',
+      paragraphs: [
+        {
+          text: 'It’s been a hard few months - bone dry conversations, forgettable restaurants, so many ghosts you could legally identify as a cemetery. You were just about to trade in your phone for a state-of-the-art spatula when suddenly, a match! They’re gorgeous, witty, down-to-earth, and seem eager to meet you.'
+        }
+      ],
+      decision: 'You stand before the sliding doors of your local grocery store...',
       choices: [
-        { text: 'Swim across', slug: 'swim-across' },
-        { text: 'Walk along', slug: 'walk-along' }
-      ]
-    },
-    {
-      id: uuidv4(),
-      slug: 'right',
-      heading: 'Right Path',
-      text: 'You find a cave. Do you want to enter the cave or continue walking?',
-      choices: [
-        { text: 'Enter the cave', slug: 'enter-cave' },
-        { text: 'Continue walking', slug: 'continue-walking' }
+        { text: 'go right', slug: 'right' },
+        { text: 'return home', slug: 'start' }
       ]
     }
-    // Add more choices as needed
   ];
 
   const current = computed(function () {
@@ -63,6 +59,25 @@ export const useOptionsStore = defineStore('options', () => {
     }
     return list[0];
   });
+
+  // watch(
+  //   () => route.path,
+  //   (newPath, oldPath) => {
+  //     console.log(oldPath);
+  //     if (oldPaths.includes(oldPath)) {
+  //       isHidden.value = false;
+  //     } else {
+  //       isHidden.value = true;
+  //     }
+  //   }
+  // );
+
+  // watch(
+  //   () => isHidden.value,
+  //   (newValue, oldValue) => {
+  //     console.log(newValue);
+  //   }
+  // );
 
   return { current };
 });

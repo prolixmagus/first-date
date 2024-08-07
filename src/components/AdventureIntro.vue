@@ -20,6 +20,7 @@
 <style scoped>
 	.exposition-wrapper {
 		max-width: 900px;
+		min-height: 400px;
 	}
 	p {
 		text-wrap: wrap;
