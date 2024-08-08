@@ -2,7 +2,7 @@
 
 html {
 	--black: #333333;
-	--white: #efefef;
+	--white: #777;
 
 	--neutral-stuffs: gray;
 
@@ -15,7 +15,7 @@ html {
 @media (prefers-color-scheme: dark) {
 	html {
 		--black: #333333;
-		--white: #efefef;
+		--white: #777;
 
 		--neutral-stuffs: gray;
 

@@ -2,7 +2,7 @@
 	import { useOptionsStore } from '@/stores/options';
 	import { useRoute, useRouter } from 'vue-router';
 	import { useMagicKeys } from '@vueuse/core';
-	import { watch } from 'vue';
+	import { watch, ref } from 'vue';
 
 	const route = useRoute();
 	const options = useOptionsStore();
@@ -48,6 +48,9 @@
 						<RouterLink :to="`/adventure/${choice.slug}`">
 							{{ choice.text }}
 						</RouterLink>
+					</li>
+					<li v-for="link in options.current.link" :key="link.id" :class="{ 'visually-hidden': options.isHidden }">
+						<a :href="link.href">{{ link.text }}</a>
 					</li>
 				</ol>
 			</div>
