@@ -4,7 +4,7 @@
 /* S etup */
 @import 'setup.css';
 
-/* S setings */
+/* S settings */
 @import 'settings.css';
 
 /* S tructure */
@@ -21,7 +21,6 @@
 
 /* S ections and more stuff */
 
-/* then other contextual styles */
 
 body {
 	background-color: var(--paper);
