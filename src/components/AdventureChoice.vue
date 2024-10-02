@@ -49,6 +49,9 @@
 							{{ choice.text }}
 						</RouterLink>
 					</li>
+
+					<!-- to add a future link in options.js store choices, since can't use an internal slug. But can't I just import a component?? -->
+
 					<li v-for="link in options.current.link" :key="link.id" :class="{ 'visually-hidden': options.isHidden }">
 						<a :href="link.href">{{ link.text }}</a>
 					</li>
@@ -57,7 +60,6 @@
 		</div>
 	</section>
 </template>
-
 <style scoped>
 	.decisions {
 		margin-top: 6em;
